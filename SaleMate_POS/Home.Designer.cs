@@ -47,6 +47,8 @@
             this.dateLbl = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.contentPnl = new System.Windows.Forms.Panel();
+            this.userNameLbl = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -54,6 +56,7 @@
             this.panel7.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel8.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -224,6 +227,7 @@
             this.panel7.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel7.Controls.Add(this.panel9);
+            this.panel7.Controls.Add(this.panel2);
             this.panel7.Controls.Add(this.panel8);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel7.Location = new System.Drawing.Point(0, 0);
@@ -235,7 +239,7 @@
             // 
             this.panel9.Controls.Add(this.dateLbl);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel9.Location = new System.Drawing.Point(1123, 0);
+            this.panel9.Location = new System.Drawing.Point(859, 0);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(249, 67);
             this.panel9.TabIndex = 9;
@@ -268,6 +272,27 @@
             this.contentPnl.Size = new System.Drawing.Size(1028, 613);
             this.contentPnl.TabIndex = 2;
             // 
+            // userNameLbl
+            // 
+            this.userNameLbl.AutoSize = true;
+            this.userNameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userNameLbl.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.userNameLbl.Location = new System.Drawing.Point(112, 20);
+            this.userNameLbl.Name = "userNameLbl";
+            this.userNameLbl.Size = new System.Drawing.Size(77, 32);
+            this.userNameLbl.TabIndex = 2;
+            this.userNameLbl.Text = "User";
+            this.userNameLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.userNameLbl);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel2.Location = new System.Drawing.Point(1108, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(264, 67);
+            this.panel2.TabIndex = 8;
+            // 
             // HomeFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -292,6 +317,8 @@
             this.panel9.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -317,5 +344,7 @@
         private System.Windows.Forms.Label dateLbl;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Panel contentPnl;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label userNameLbl;
     }
 }

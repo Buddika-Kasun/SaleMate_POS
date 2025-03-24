@@ -39,6 +39,7 @@ namespace SaleMate_POS
 
         private void HomeFrm_Load(object sender, EventArgs e)
         {
+            userNameLbl.Text = loggedInUser;
             dateLbl.Text = DateTime.Now.ToString("yyyy-MM-dd"); // Output: 2023-10-05
         }
 
