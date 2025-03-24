@@ -16,7 +16,17 @@ namespace SaleMate_POS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginFrm());
+            //Application.Run(new LoginFrm());
+
+            LoginFrm loginForm = new LoginFrm();
+            if (loginForm.ShowDialog() == DialogResult.OK)
+            {
+                // Retrieve the logged-in username from the login form
+                string loggedInUser = loginForm.LoggedInUser;
+
+                // If login is successful, show the HomeFrm and make it the main form
+                Application.Run(new HomeFrm(loggedInUser));
+            }
         }
     }
 }

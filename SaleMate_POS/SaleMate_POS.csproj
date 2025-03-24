@@ -46,6 +46,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AllPurchasesFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllPurchasesFrm.Designer.cs">
+      <DependentUpon>AllPurchasesFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllSalesFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllSalesFrm.Designer.cs">
+      <DependentUpon>AllSalesFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChangePasswordFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangePasswordFrm.Designer.cs">
+      <DependentUpon>ChangePasswordFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GoodReceiptFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GoodReceiptFrm.Designer.cs">
+      <DependentUpon>GoodReceiptFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,6 +84,27 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SaleItemsFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SaleItemsFrm.Designer.cs">
+      <DependentUpon>SaleItemsFrm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AllPurchasesFrm.resx">
+      <DependentUpon>AllPurchasesFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllSalesFrm.resx">
+      <DependentUpon>AllSalesFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangePasswordFrm.resx">
+      <DependentUpon>ChangePasswordFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GoodReceiptFrm.resx">
+      <DependentUpon>GoodReceiptFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginFrm.resx">
       <DependentUpon>LoginFrm.cs</DependentUpon>
     </EmbeddedResource>
@@ -66,6 +117,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="SaleItemsFrm.resx">
+      <DependentUpon>SaleItemsFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
