@@ -1,6 +1,6 @@
 ﻿namespace SaleMate_POS
 {
-    partial class Form1
+    partial class LoginFrm
     {
         /// <summary>
         /// Required designer variable.
