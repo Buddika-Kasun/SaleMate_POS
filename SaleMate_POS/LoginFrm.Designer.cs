@@ -73,13 +73,16 @@
             // 
             // loginBtn
             // 
+            this.loginBtn.BackColor = System.Drawing.Color.DarkBlue;
+            this.loginBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.loginBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loginBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.loginBtn.Location = new System.Drawing.Point(317, 303);
             this.loginBtn.Name = "loginBtn";
             this.loginBtn.Size = new System.Drawing.Size(151, 49);
             this.loginBtn.TabIndex = 5;
             this.loginBtn.Text = "Login";
-            this.loginBtn.UseVisualStyleBackColor = true;
+            this.loginBtn.UseVisualStyleBackColor = false;
             this.loginBtn.Click += new System.EventHandler(this.loginBtn_Click);
             // 
             // LoginFrm

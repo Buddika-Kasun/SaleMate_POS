@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace SaleMate_POS
 {
@@ -31,6 +32,27 @@ namespace SaleMate_POS
             form.Show();
         }
 
+        public void ChangBtnClr(object sender)
+        {
+            // Define the buttons you want to manage
+            Button[] btns = { goodRecBtn, allPurchBtn, allSalesBtn, saleItmBtn, cngPwBtn };
+
+            // Loop through each button
+            foreach (Button btn in btns)
+            {
+                if (btn == (Button)sender) // Check if the current button matches the clicked button
+                {
+                    btn.BackColor = SystemColors.HotTrack; // Set background color to blue
+                    btn.ForeColor = SystemColors.InactiveBorder;
+                }
+                else
+                {
+                    btn.BackColor = SystemColors.InactiveBorder; // Set background color to white
+                    btn.ForeColor = SystemColors.InfoText;
+                }
+            }
+        }
+
         public HomeFrm(string username)
         {
             this.loggedInUser = username;
@@ -46,26 +68,31 @@ namespace SaleMate_POS
         private void goodRecBtn_Click(object sender, EventArgs e)
         {
             showChildForm(new GoodReceiptFrm());
+            ChangBtnClr(goodRecBtn);
         }
 
         private void allPurchBtn_Click(object sender, EventArgs e)
         {
             showChildForm(new AllPurchasesFrm());
+            ChangBtnClr(allPurchBtn);
         }
 
         private void saleItmBtn_Click(object sender, EventArgs e)
         {
             showChildForm(new SaleItemsFrm());
+            ChangBtnClr(saleItmBtn);
         }
 
         private void allSalesBtn_Click(object sender, EventArgs e)
         {
             showChildForm(new AllSalesFrm());
+            ChangBtnClr(allSalesBtn);
         }
 
         private void cngPwBtn_Click(object sender, EventArgs e)
         {
             showChildForm(new ChangePasswordFrm());
+            ChangBtnClr(cngPwBtn);
         }
     }
 }
