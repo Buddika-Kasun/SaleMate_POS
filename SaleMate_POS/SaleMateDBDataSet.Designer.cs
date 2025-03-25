@@ -2666,7 +2666,7 @@ SELECT ReceiptNo, RowNo, ItemName, Qty, UnitPrice, Value FROM PurchaseGrid WHERE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::SaleMate_POS.Properties.Settings.Default.cn;
+            this._connection.ConnectionString = global::SaleMate_POS.Properties.Settings.Default.cns1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2997,7 +2997,7 @@ SELECT ReceiptNo, Supplier, Date, TotalValue FROM PurchaseHeader WHERE (ReceiptN
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::SaleMate_POS.Properties.Settings.Default.cn;
+            this._connection.ConnectionString = global::SaleMate_POS.Properties.Settings.Default.cns1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3330,7 +3330,7 @@ SELECT SaleNo, RowNo, ItemName, Qty, UnitPrice, Value FROM SalesGrid WHERE (RowN
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::SaleMate_POS.Properties.Settings.Default.cn;
+            this._connection.ConnectionString = global::SaleMate_POS.Properties.Settings.Default.cns1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3661,7 +3661,7 @@ SELECT SaleNo, Customer, Date, TotalValue FROM SalesHeader WHERE (SaleNo = @Sale
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::SaleMate_POS.Properties.Settings.Default.cn;
+            this._connection.ConnectionString = global::SaleMate_POS.Properties.Settings.Default.cns1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3978,7 +3978,7 @@ SELECT SaleNo, Customer, Date, TotalValue FROM SalesHeader WHERE (SaleNo = @Sale
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::SaleMate_POS.Properties.Settings.Default.cn;
+            this._connection.ConnectionString = global::SaleMate_POS.Properties.Settings.Default.cns1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

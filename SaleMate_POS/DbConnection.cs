@@ -10,7 +10,8 @@ public class DbConnection
     // Constructor to initialize the connection string from App.config
     public DbConnection()
     {
-        _connectionString = ConfigurationManager.ConnectionStrings["SaleMate_POS.Properties.Settings.cn"]?.ConnectionString;
+        //_connectionString = ConfigurationManager.ConnectionStrings["SaleMate_POS.Properties.Settings.cn"]?.ConnectionString;
+        _connectionString = ConfigurationManager.ConnectionStrings["SaleMate_POS.Properties.Settings.cns"]?.ConnectionString;
 
         if (string.IsNullOrEmpty(_connectionString))
         {
