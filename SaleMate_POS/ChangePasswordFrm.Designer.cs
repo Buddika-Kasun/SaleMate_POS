@@ -120,6 +120,7 @@
             this.svBtn.TabIndex = 6;
             this.svBtn.Text = "Save";
             this.svBtn.UseVisualStyleBackColor = true;
+            this.svBtn.Click += new System.EventHandler(this.svBtn_Click);
             // 
             // label4
             // 
