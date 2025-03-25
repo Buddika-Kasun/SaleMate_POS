@@ -1,11 +1,17 @@
 ﻿using System;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 
 public class DbConnection
 {
     // Private field to store the database connection string
     private readonly string _connectionString;
+
+    public string GetConnectionString()
+    {
+        return _connectionString;
+    }
 
     // Constructor to initialize the connection string from App.config
     public DbConnection()
@@ -34,7 +40,8 @@ public class DbConnection
                     cmd.Parameters.AddRange(parameters);
                 }
 
-                return cmd.ExecuteReader(); // Returns a data reader for result sets
+                //return cmd.ExecuteReader(); // Returns a data reader for result sets
+                return cmd.ExecuteReader(CommandBehavior.CloseConnection);
             }
             catch (Exception ex)
             {

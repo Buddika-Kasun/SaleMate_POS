@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -101,6 +102,94 @@ namespace SaleMate_POS
             totalValTxt.Text = total.ToString("F2"); // Format to 2 decimal places
         }
 
+        private void clearAll()
+        {
+            cstmrTxt.Text = string.Empty;
+            salesGrid.Rows.Clear();
+            totalValTxt.Text = "0.00";
+
+            genSalesNo();
+        }
+
+        private void insertSale()
+        {
+            // Validate supplier field
+            if (string.IsNullOrWhiteSpace(cstmrTxt.Text))
+            {
+                MessageBox.Show("Customer field cannot be empty.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Validate that at least one row exists in the grid
+            if (salesGrid.Rows.Count == 0 || salesGrid.Rows.Cast<DataGridViewRow>().All(row => row.IsNewRow))
+            {
+                MessageBox.Show("At least one item must be added to the grid before submitting.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            try
+            {
+                // Create database connection object
+                DbConnection db = new DbConnection();
+
+                // Get total value from totalValTxt
+                if (!decimal.TryParse(totalValTxt.Text, out decimal totalValue))
+                {
+                    MessageBox.Show("Invalid total value.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Get current date in dd/MM/yyyy format
+                //string currentDate = DateTime.Now.ToString("dd/MM/yyyy");
+                DateTime currentDate = DateTime.Now.Date;
+
+                // Insert into saleHeader table
+                string insertHeaderQuery = "INSERT INTO [SalesHeader] (SaleNo, Customer, TotalValue, Date) VALUES (@saleNo, @customer, @totalValue, @currentDate)";
+                SqlParameter[] headerParams =
+                {
+                    new SqlParameter("@saleNo", saleNoTxt.Text),
+                    new SqlParameter("@customer", cstmrTxt.Text),
+                    new SqlParameter("@totalValue", totalValue),
+                    new SqlParameter("@currentDate", currentDate)
+                };
+                db.ExecuteNonQuery(insertHeaderQuery, headerParams);
+
+                // Insert each row into saleGrid table
+                int rowNo = 1;
+                foreach (DataGridViewRow row in salesGrid.Rows)
+                {
+                    if (row.IsNewRow) continue; // Skip empty new row
+
+                    string itemName = row.Cells["itemName"].Value?.ToString();
+                    if (!decimal.TryParse(row.Cells["qty"].Value?.ToString(), out decimal qty)) qty = 0;
+                    if (!decimal.TryParse(row.Cells["unitPrice"].Value?.ToString(), out decimal unitPrice)) unitPrice = 0;
+                    if (!decimal.TryParse(row.Cells["value"].Value?.ToString(), out decimal value)) value = 0;
+
+                    string insertGridQuery = "INSERT INTO [SalesGrid] (SaleNo, RowNo, ItemName, Qty, UnitPrice, Value) VALUES (@saleNo, @rowNo, @itemName, @qty, @unitPrice, @value)";
+                    SqlParameter[] gridParams =
+                    {
+                        new SqlParameter("@saleNo", saleNoTxt.Text),
+                        new SqlParameter("@rowNo", rowNo),
+                        new SqlParameter("@itemName", itemName),
+                        new SqlParameter("@qty", qty),
+                        new SqlParameter("@unitPrice", unitPrice),
+                        new SqlParameter("@value", value)
+                    };
+                    db.ExecuteNonQuery(insertGridQuery, gridParams);
+
+                    rowNo++; // Increment row number for each row
+                }
+
+                MessageBox.Show("Sale recorded successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                clearAll(); // Clear form after submission
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error while saving data: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
         public SaleItemsFrm()
         {
             InitializeComponent();
@@ -134,6 +223,16 @@ namespace SaleMate_POS
         private void salesGrid_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             calGridValue(e);
+        }
+
+        private void clearBtn_Click(object sender, EventArgs e)
+        {
+            clearAll();
+        }
+
+        private void saleBtn_Click(object sender, EventArgs e)
+        {
+            insertSale();
         }
     }
 }

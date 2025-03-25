@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.subValTxt = new System.Windows.Forms.TextBox();
@@ -40,17 +43,24 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
+            this.allSalesGrid = new System.Windows.Forms.DataGridView();
+            this.srchRecBtn = new System.Windows.Forms.Button();
+            this.saleNoTxt = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.allSalesGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.allSalesGrid);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(0, 167);
+            this.panel4.Location = new System.Drawing.Point(0, 240);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1157, 340);
+            this.panel4.Size = new System.Drawing.Size(1157, 267);
             this.panel4.TabIndex = 21;
             // 
             // panel3
@@ -72,6 +82,8 @@
             this.subValTxt.ReadOnly = true;
             this.subValTxt.Size = new System.Drawing.Size(175, 35);
             this.subValTxt.TabIndex = 9;
+            this.subValTxt.Text = "0.00";
+            this.subValTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label3
             // 
@@ -86,6 +98,9 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.srchRecBtn);
+            this.panel2.Controls.Add(this.saleNoTxt);
+            this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.toDate);
             this.panel2.Controls.Add(this.fromDate);
             this.panel2.Controls.Add(this.label2);
@@ -94,7 +109,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 56);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1157, 111);
+            this.panel2.Size = new System.Drawing.Size(1157, 184);
             this.panel2.TabIndex = 20;
             // 
             // toDate
@@ -143,6 +158,7 @@
             this.searchBtn.TabIndex = 10;
             this.searchBtn.Text = "Search";
             this.searchBtn.UseVisualStyleBackColor = true;
+            this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
             // 
             // label1
             // 
@@ -179,6 +195,85 @@
             this.label4.TabIndex = 8;
             this.label4.Text = "All Sales";
             // 
+            // allSalesGrid
+            // 
+            this.allSalesGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.allSalesGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.allSalesGrid.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.allSalesGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.allSalesGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.allSalesGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.allSalesGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.allSalesGrid.DefaultCellStyle = dataGridViewCellStyle2;
+            this.allSalesGrid.Location = new System.Drawing.Point(35, 0);
+            this.allSalesGrid.Margin = new System.Windows.Forms.Padding(10);
+            this.allSalesGrid.Name = "allSalesGrid";
+            this.allSalesGrid.ReadOnly = true;
+            this.allSalesGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.allSalesGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.allSalesGrid.RowHeadersVisible = false;
+            this.allSalesGrid.RowHeadersWidth = 62;
+            this.allSalesGrid.RowTemplate.Height = 28;
+            this.allSalesGrid.Size = new System.Drawing.Size(1067, 267);
+            this.allSalesGrid.TabIndex = 2;
+            // 
+            // srchRecBtn
+            // 
+            this.srchRecBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.srchRecBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.srchRecBtn.Location = new System.Drawing.Point(941, 104);
+            this.srchRecBtn.Name = "srchRecBtn";
+            this.srchRecBtn.Size = new System.Drawing.Size(161, 52);
+            this.srchRecBtn.TabIndex = 18;
+            this.srchRecBtn.Text = "Search";
+            this.srchRecBtn.UseVisualStyleBackColor = true;
+            this.srchRecBtn.Click += new System.EventHandler(this.srchRecBtn_Click);
+            // 
+            // saleNoTxt
+            // 
+            this.saleNoTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saleNoTxt.Location = new System.Drawing.Point(174, 113);
+            this.saleNoTxt.Name = "saleNoTxt";
+            this.saleNoTxt.Size = new System.Drawing.Size(163, 35);
+            this.saleNoTxt.TabIndex = 17;
+            this.saleNoTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(30, 116);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(100, 29);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "Sale No";
+            // 
             // AllSalesFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -190,12 +285,15 @@
             this.Controls.Add(this.panel1);
             this.Name = "AllSalesFrm";
             this.Text = "AllSalesFrm";
+            this.Load += new System.EventHandler(this.AllSalesFrm_Load);
+            this.panel4.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.allSalesGrid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -214,5 +312,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridView allSalesGrid;
+        private System.Windows.Forms.Button srchRecBtn;
+        private System.Windows.Forms.TextBox saleNoTxt;
+        private System.Windows.Forms.Label label5;
     }
 }
