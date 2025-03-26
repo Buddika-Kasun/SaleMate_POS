@@ -227,12 +227,33 @@ namespace SaleMate_POS
 
         private void clearBtn_Click(object sender, EventArgs e)
         {
-            clearAll();
+            if (MessageBox.Show("Are you sure you want to clear all fields?", "Confirm Clear", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                clearAll();
+            }
         }
 
         private void purchsBtn_Click(object sender, EventArgs e)
         {
             insertPurch();
+        }
+
+        private void purchGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (purchGrid.Columns[e.ColumnIndex].Name == "remove" && e.RowIndex >= 0)
+            {
+                if (purchGrid.Rows[e.RowIndex].IsNewRow)
+                {
+                    MessageBox.Show("New row can't delete.", "Cannot Delete", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (MessageBox.Show("Are you sure to delete this record ?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    purchGrid.Rows.RemoveAt(e.RowIndex);
+                    calTotalValue();
+                }
+            }
         }
     }
 }

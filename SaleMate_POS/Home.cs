@@ -63,6 +63,14 @@ namespace SaleMate_POS
         {
             userNameLbl.Text = loggedInUser;
             dateLbl.Text = DateTime.Now.ToString("yyyy-MM-dd"); // Output: 2023-10-05
+
+            if(loggedInUser == "admin")
+            {
+                panel3.Visible = false;
+                panel4.Visible = false;
+            }
+
+            showChildForm(new DashboardFrm());
         }
 
         private void goodRecBtn_Click(object sender, EventArgs e)
@@ -91,7 +99,7 @@ namespace SaleMate_POS
 
         private void cngPwBtn_Click(object sender, EventArgs e)
         {
-            showChildForm(new ChangePasswordFrm());
+            showChildForm(new ChangePasswordFrm(loggedInUser));
             ChangBtnClr(cngPwBtn);
         }
     }

@@ -215,6 +215,7 @@ namespace SaleMate_POS
             // Validate required fields
             if (string.IsNullOrEmpty(itemName) || string.IsNullOrEmpty(qtyText) || string.IsNullOrEmpty(unitPriceText))
             {
+                
                 MessageBox.Show("Please fill all fields before moving to the next row.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 e.Cancel = true; // Prevent moving to the next row
             }
@@ -227,12 +228,33 @@ namespace SaleMate_POS
 
         private void clearBtn_Click(object sender, EventArgs e)
         {
-            clearAll();
+            if (MessageBox.Show("Are you sure you want to clear all fields?", "Confirm Clear", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                clearAll();
+            }
         }
 
         private void saleBtn_Click(object sender, EventArgs e)
         {
             insertSale();
+        }
+
+        private void salesGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (salesGrid.Columns[e.ColumnIndex].Name == "remove" && e.RowIndex >= 0)
+            {
+                if (salesGrid.Rows[e.RowIndex].IsNewRow)
+                {
+                    MessageBox.Show("New row can't delete.", "Cannot Delete", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (MessageBox.Show("Are you sure to delete this record ?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    salesGrid.Rows.RemoveAt(e.RowIndex);
+                    calTotalValue();
+                }
+            }
         }
     }
 }

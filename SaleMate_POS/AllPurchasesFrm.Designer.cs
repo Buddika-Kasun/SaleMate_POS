@@ -28,30 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.allPurchGrid = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
             this.subValTxt = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.searchBtn = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.srchRecBtn = new System.Windows.Forms.Button();
+            this.recNoTxt = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.toDate = new System.Windows.Forms.DateTimePicker();
             this.fromDate = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.allPurchGrid = new System.Windows.Forms.DataGridView();
-            this.label5 = new System.Windows.Forms.Label();
-            this.recNoTxt = new System.Windows.Forms.TextBox();
-            this.srchRecBtn = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.allPurchGrid)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.allPurchGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // panel4
@@ -62,6 +62,51 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1130, 285);
             this.panel4.TabIndex = 17;
+            // 
+            // allPurchGrid
+            // 
+            this.allPurchGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.allPurchGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.allPurchGrid.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.allPurchGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.allPurchGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.allPurchGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.allPurchGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.allPurchGrid.DefaultCellStyle = dataGridViewCellStyle2;
+            this.allPurchGrid.Location = new System.Drawing.Point(35, 0);
+            this.allPurchGrid.Margin = new System.Windows.Forms.Padding(10);
+            this.allPurchGrid.Name = "allPurchGrid";
+            this.allPurchGrid.ReadOnly = true;
+            this.allPurchGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.allPurchGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.allPurchGrid.RowHeadersVisible = false;
+            this.allPurchGrid.RowHeadersWidth = 62;
+            this.allPurchGrid.RowTemplate.Height = 28;
+            this.allPurchGrid.Size = new System.Drawing.Size(1040, 285);
+            this.allPurchGrid.TabIndex = 3;
             // 
             // panel3
             // 
@@ -89,23 +134,25 @@
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(732, 32);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(123, 29);
+            this.label3.Size = new System.Drawing.Size(132, 29);
             this.label3.TabIndex = 8;
             this.label3.Text = "Sub Value";
             // 
             // searchBtn
             // 
             this.searchBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.searchBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchBtn.BackColor = System.Drawing.SystemColors.Highlight;
+            this.searchBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.searchBtn.Location = new System.Drawing.Point(914, 35);
             this.searchBtn.Name = "searchBtn";
             this.searchBtn.Size = new System.Drawing.Size(161, 52);
             this.searchBtn.TabIndex = 10;
             this.searchBtn.Text = "Search";
-            this.searchBtn.UseVisualStyleBackColor = true;
+            this.searchBtn.UseVisualStyleBackColor = false;
             this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
             // 
             // panel2
@@ -123,6 +170,42 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1130, 180);
             this.panel2.TabIndex = 16;
+            // 
+            // srchRecBtn
+            // 
+            this.srchRecBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.srchRecBtn.BackColor = System.Drawing.SystemColors.Highlight;
+            this.srchRecBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.srchRecBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.srchRecBtn.Location = new System.Drawing.Point(914, 103);
+            this.srchRecBtn.Name = "srchRecBtn";
+            this.srchRecBtn.Size = new System.Drawing.Size(161, 52);
+            this.srchRecBtn.TabIndex = 15;
+            this.srchRecBtn.Text = "Search";
+            this.srchRecBtn.UseVisualStyleBackColor = false;
+            this.srchRecBtn.Click += new System.EventHandler(this.srchRecBtn_Click);
+            // 
+            // recNoTxt
+            // 
+            this.recNoTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.recNoTxt.Location = new System.Drawing.Point(199, 112);
+            this.recNoTxt.Name = "recNoTxt";
+            this.recNoTxt.Size = new System.Drawing.Size(138, 35);
+            this.recNoTxt.TabIndex = 14;
+            this.recNoTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(30, 115);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(144, 29);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Receipt No";
             // 
             // toDate
             // 
@@ -153,10 +236,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(381, 47);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(43, 29);
+            this.label2.Size = new System.Drawing.Size(45, 29);
             this.label2.TabIndex = 6;
             this.label2.Text = "To";
             // 
@@ -166,10 +249,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(30, 47);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 29);
+            this.label1.Size = new System.Drawing.Size(74, 29);
             this.label1.TabIndex = 4;
             this.label1.Text = "From";
             // 
@@ -195,85 +278,6 @@
             this.label4.TabIndex = 8;
             this.label4.Text = "All Purchases";
             // 
-            // allPurchGrid
-            // 
-            this.allPurchGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.allPurchGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.allPurchGrid.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.allPurchGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.allPurchGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.allPurchGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
-            this.allPurchGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.allPurchGrid.DefaultCellStyle = dataGridViewCellStyle11;
-            this.allPurchGrid.Location = new System.Drawing.Point(35, 0);
-            this.allPurchGrid.Margin = new System.Windows.Forms.Padding(10);
-            this.allPurchGrid.Name = "allPurchGrid";
-            this.allPurchGrid.ReadOnly = true;
-            this.allPurchGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.allPurchGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
-            this.allPurchGrid.RowHeadersVisible = false;
-            this.allPurchGrid.RowHeadersWidth = 62;
-            this.allPurchGrid.RowTemplate.Height = 28;
-            this.allPurchGrid.Size = new System.Drawing.Size(1040, 285);
-            this.allPurchGrid.TabIndex = 3;
-            // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(30, 115);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(134, 29);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "Receipt No";
-            // 
-            // recNoTxt
-            // 
-            this.recNoTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.recNoTxt.Location = new System.Drawing.Point(199, 112);
-            this.recNoTxt.Name = "recNoTxt";
-            this.recNoTxt.Size = new System.Drawing.Size(138, 35);
-            this.recNoTxt.TabIndex = 14;
-            this.recNoTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // srchRecBtn
-            // 
-            this.srchRecBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.srchRecBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.srchRecBtn.Location = new System.Drawing.Point(914, 103);
-            this.srchRecBtn.Name = "srchRecBtn";
-            this.srchRecBtn.Size = new System.Drawing.Size(161, 52);
-            this.srchRecBtn.TabIndex = 15;
-            this.srchRecBtn.Text = "Search";
-            this.srchRecBtn.UseVisualStyleBackColor = true;
-            this.srchRecBtn.Click += new System.EventHandler(this.srchRecBtn_Click);
-            // 
             // AllPurchasesFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -287,13 +291,13 @@
             this.Text = "AllPurchasesFrm";
             this.Load += new System.EventHandler(this.AllPurchasesFrm_Load);
             this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.allPurchGrid)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.allPurchGrid)).EndInit();
             this.ResumeLayout(false);
 
         }

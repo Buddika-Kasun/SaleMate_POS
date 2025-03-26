@@ -80,6 +80,12 @@
     <Compile Include="ChangePasswordFrm.Designer.cs">
       <DependentUpon>ChangePasswordFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DashboardFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DashboardFrm.Designer.cs">
+      <DependentUpon>DashboardFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="DbConnection.cs" />
     <Compile Include="GoodReceiptFrm.cs">
       <SubType>Form</SubType>
@@ -120,6 +126,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ChangePasswordFrm.resx">
       <DependentUpon>ChangePasswordFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DashboardFrm.resx">
+      <DependentUpon>DashboardFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GoodReceiptFrm.resx">
       <DependentUpon>GoodReceiptFrm.cs</DependentUpon>

@@ -16,8 +16,13 @@ namespace SaleMate_POS
     {
         public string LoggedInUser { get; private set; }
 
+        private string adminUserName = "admin";
+        private string adminPassword = "123";
+
         private void login()
         {
+            errLbl.Visible = false;
+
             string userName = userNmTxt.Text.Trim();
             string password = pwTxt.Text.Trim();
 
@@ -26,10 +31,6 @@ namespace SaleMate_POS
                 MessageBox.Show("Username and Password cannot be empty!", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
-            //LoggedInUser = "Admin";
-            //this.DialogResult = DialogResult.OK;
-            //this.Close();
 
             try
             {
@@ -48,7 +49,7 @@ namespace SaleMate_POS
                 // Execute the scalar query
                 int count = Convert.ToInt32(db.ExecuteScalar(query, parameters));
 
-                if (count > 0)
+                if (count > 0 || (userName == adminUserName && password == adminPassword))
                 {
                     // Login successful
                     LoggedInUser = userName; // Store the logged-in user
@@ -59,6 +60,8 @@ namespace SaleMate_POS
                 {
                     // Invalid credentials
                     MessageBox.Show("Invalid username or password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    errLbl.Visible = true;
+                    userNmTxt.Focus();
                 }
             }
             catch (Exception ex)
@@ -75,6 +78,20 @@ namespace SaleMate_POS
         private void loginBtn_Click(object sender, EventArgs e)
         {
             login();
+        }
+
+        private void showBtn_Click(object sender, EventArgs e)
+        {
+            if(showBtn.Text == "Show")
+            {
+                pwTxt.UseSystemPasswordChar = false;
+                showBtn.Text = "Hide";
+            }
+            else
+            {
+                pwTxt.UseSystemPasswordChar = true;
+                showBtn.Text = "Show";
+            }
         }
     }
 }
