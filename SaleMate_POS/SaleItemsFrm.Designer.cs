@@ -34,6 +34,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel4 = new System.Windows.Forms.Panel();
             this.salesGrid = new System.Windows.Forms.DataGridView();
+            this.itemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unitPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.value = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.remove = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel3 = new System.Windows.Forms.Panel();
             this.clearBtn = new System.Windows.Forms.Button();
             this.saleBtn = new System.Windows.Forms.Button();
@@ -46,11 +51,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.itemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unitPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.value = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.remove = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.salesGrid)).BeginInit();
             this.panel3.SuspendLayout();
@@ -118,6 +118,54 @@
             this.salesGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.salesGrid_CellContentClick);
             this.salesGrid.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.salesGrid_CellValueChanged);
             this.salesGrid.RowValidating += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.salesGrid_RowValidating);
+            // 
+            // itemName
+            // 
+            this.itemName.FillWeight = 50F;
+            this.itemName.HeaderText = "Item Name";
+            this.itemName.MinimumWidth = 8;
+            this.itemName.Name = "itemName";
+            // 
+            // qty
+            // 
+            this.qty.FillWeight = 10F;
+            this.qty.HeaderText = "Qty";
+            this.qty.MinimumWidth = 8;
+            this.qty.Name = "qty";
+            // 
+            // unitPrice
+            // 
+            this.unitPrice.FillWeight = 20F;
+            this.unitPrice.HeaderText = "Unit Price";
+            this.unitPrice.MinimumWidth = 8;
+            this.unitPrice.Name = "unitPrice";
+            // 
+            // value
+            // 
+            this.value.FillWeight = 20F;
+            this.value.HeaderText = "Value";
+            this.value.MinimumWidth = 8;
+            this.value.Name = "value";
+            this.value.ReadOnly = true;
+            // 
+            // remove
+            // 
+            this.remove.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            this.remove.DefaultCellStyle = dataGridViewCellStyle2;
+            this.remove.FillWeight = 7F;
+            this.remove.HeaderText = "";
+            this.remove.MinimumWidth = 8;
+            this.remove.Name = "remove";
+            this.remove.Text = "X";
+            this.remove.ToolTipText = "Delete row";
+            this.remove.UseColumnTextForButtonValue = true;
+            this.remove.Width = 40;
             // 
             // panel3
             // 
@@ -262,53 +310,6 @@
             this.label4.TabIndex = 8;
             this.label4.Text = "Sale Items";
             // 
-            // itemName
-            // 
-            this.itemName.FillWeight = 50F;
-            this.itemName.HeaderText = "Item Name";
-            this.itemName.MinimumWidth = 8;
-            this.itemName.Name = "itemName";
-            // 
-            // qty
-            // 
-            this.qty.FillWeight = 10F;
-            this.qty.HeaderText = "Qty";
-            this.qty.MinimumWidth = 8;
-            this.qty.Name = "qty";
-            // 
-            // unitPrice
-            // 
-            this.unitPrice.FillWeight = 20F;
-            this.unitPrice.HeaderText = "Unit Price";
-            this.unitPrice.MinimumWidth = 8;
-            this.unitPrice.Name = "unitPrice";
-            // 
-            // value
-            // 
-            this.value.FillWeight = 20F;
-            this.value.HeaderText = "Value";
-            this.value.MinimumWidth = 8;
-            this.value.Name = "value";
-            this.value.ReadOnly = true;
-            // 
-            // remove
-            // 
-            this.remove.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            this.remove.DefaultCellStyle = dataGridViewCellStyle2;
-            this.remove.FillWeight = 7F;
-            this.remove.HeaderText = "";
-            this.remove.Name = "remove";
-            this.remove.Text = "X";
-            this.remove.ToolTipText = "Delete row";
-            this.remove.UseColumnTextForButtonValue = true;
-            this.remove.Width = 40;
-            // 
             // SaleItemsFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -318,9 +319,11 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.KeyPreview = true;
             this.Name = "SaleItemsFrm";
             this.Text = "SaleItemsFrm";
             this.Load += new System.EventHandler(this.SaleItemsFrm_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SaleItemsFrm_KeyDown);
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.salesGrid)).EndInit();
             this.panel3.ResumeLayout(false);

@@ -27,32 +27,10 @@ namespace SaleMate_POS.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\SaleMateDB.md" +
-            "f;Integrated Security=True")]
-        public string cn {
-            get {
-                return ((string)(this["cn"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=BIKZ;Initial Catalog=C:\\USERS\\BUDDI\\SOURCE\\REPOS\\SALEMATE_POS\\SALEMAT" +
-            "E_POS\\SALEMATEDB.MDF;Integrated Security=True;TrustServerCertificate=True")]
+            "f;Integrated Security=True;")]
         public string cns {
             get {
                 return ((string)(this["cns"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=BIKZ;Initial Catalog=SaleMateDB;Integrated Security=True;TrustServerC" +
-            "ertificate=True")]
-        public string cns1 {
-            get {
-                return ((string)(this["cns1"]));
             }
         }
     }

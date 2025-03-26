@@ -93,5 +93,13 @@ namespace SaleMate_POS
                 showBtn.Text = "Show";
             }
         }
+
+        private void LoginFrm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                loginBtn.PerformClick();
+            }
+        }
     }
 }

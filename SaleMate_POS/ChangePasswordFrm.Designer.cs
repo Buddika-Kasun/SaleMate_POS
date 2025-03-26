@@ -210,10 +210,12 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pwLbl);
             this.Controls.Add(this.label1);
+            this.KeyPreview = true;
             this.Name = "ChangePasswordFrm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ChangePasswordFrm";
             this.Load += new System.EventHandler(this.ChangePasswordFrm_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ChangePasswordFrm_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

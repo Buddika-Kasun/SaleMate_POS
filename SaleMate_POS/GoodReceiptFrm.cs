@@ -255,5 +255,18 @@ namespace SaleMate_POS
                 }
             }
         }
+
+        private void GoodReceiptFrm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                purchsBtn.PerformClick();
+            }
+
+            if((e.KeyCode == Keys.Delete)) 
+            {
+                clearBtn.PerformClick();
+            }
+        }
     }
 }

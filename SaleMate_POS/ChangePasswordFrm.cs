@@ -168,5 +168,13 @@ namespace SaleMate_POS
                 showBtn.Text = "Show";
             }
         }
+
+        private void ChangePasswordFrm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                svBtn.PerformClick();
+            }
+        }
     }
 }

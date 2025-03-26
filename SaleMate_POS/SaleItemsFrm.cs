@@ -256,5 +256,18 @@ namespace SaleMate_POS
                 }
             }
         }
+
+        private void SaleItemsFrm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                saleBtn.PerformClick();
+            }
+
+            if ((e.KeyCode == Keys.Delete))
+            {
+                clearBtn.PerformClick();
+            }
+        }
     }
 }

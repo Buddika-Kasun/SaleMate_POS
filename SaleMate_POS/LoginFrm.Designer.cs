@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginFrm));
             this.usrNmLbl = new System.Windows.Forms.Label();
             this.pwLbl = new System.Windows.Forms.Label();
             this.userNmTxt = new System.Windows.Forms.TextBox();
@@ -137,11 +138,14 @@
             this.Controls.Add(this.userNmTxt);
             this.Controls.Add(this.pwLbl);
             this.Controls.Add(this.usrNmLbl);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.Name = "LoginFrm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.LoginFrm_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
