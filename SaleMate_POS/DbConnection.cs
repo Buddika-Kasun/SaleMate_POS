@@ -6,7 +6,14 @@ using System.Data.SqlClient;
 public class DbConnection
 {
     // Private field to store the database connection string
-    private readonly string _connectionString;
+    //private readonly string _connectionString;
+
+    private static string _connectionString;
+
+    public static void SetConnectionString(string connString)
+    {
+        _connectionString = connString;
+    }
 
     public string GetConnectionString()
     {
@@ -17,12 +24,12 @@ public class DbConnection
     public DbConnection()
     {
         //_connectionString = ConfigurationManager.ConnectionStrings["SaleMate_POS.Properties.Settings.cn"]?.ConnectionString;
-        _connectionString = ConfigurationManager.ConnectionStrings["SaleMate_POS.Properties.Settings.cns"]?.ConnectionString;
+        //_connectionString = ConfigurationManager.ConnectionStrings["SaleMate_POS.Properties.Settings.cns"]?.ConnectionString;
 
-        if (string.IsNullOrEmpty(_connectionString))
-        {
-            throw new InvalidOperationException("Database connection string not found in App.config.");
-        }
+        //if (string.IsNullOrEmpty(_connectionString))
+        //{
+        //    throw new InvalidOperationException("Database connection string not found in App.config.");
+        //}
     }
 
     // Method to execute a query and return a data reader

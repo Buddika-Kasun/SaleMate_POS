@@ -207,5 +207,17 @@
       <DependentUpon>SaleMateDB.mdf</DependentUpon>
     </Content>
   </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="SaleMateDB.mdf">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

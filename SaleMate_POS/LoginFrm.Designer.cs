@@ -79,6 +79,7 @@
             // loginBtn
             // 
             this.loginBtn.BackColor = System.Drawing.Color.DarkBlue;
+            this.loginBtn.Cursor = System.Windows.Forms.Cursors.Default;
             this.loginBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.loginBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loginBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
